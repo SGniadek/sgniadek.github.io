@@ -1,0 +1,92 @@
+.contact-section {
+  position: relative;
+  padding: 150px 40px;
+  background: radial-gradient(circle at center, #000 60%, #001a33 100%);
+  text-align: center;
+  overflow: hidden;
+}
+
+.section-title {
+  font-size: 50px;
+  color: #0af;
+  text-shadow: 0 0 30px #0af, 0 0 60px #0af;
+  margin-bottom: 60px;
+}
+
+/* FORMULARZ */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  width: 60%;
+  margin: auto;
+  z-index: 2;
+  position: relative;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px 20px;
+  border: 2px solid #0af;
+  border-radius: 10px;
+  background: rgba(0,0,20,0.7);
+  color: #fff;
+  font-size: 18px;
+  outline: none;
+  box-shadow: 0 0 20px #0af;
+  transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  box-shadow: 0 0 40px #0af, 0 0 80px #0af inset;
+  transform: scale(1.03);
+}
+
+.contact-form button {
+  padding: 15px 40px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(90deg, #0af, #4df);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 30px #0af;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.contact-form button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 60px #0af, 0 0 120px #0af inset;
+}
+
+/* DRONY W TLE */
+.drone-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.drone {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, #0af 40%, transparent 70%);
+  border-radius: 50%;
+  box-shadow: 0 0 20px #0af, 0 0 40px #0af;
+  animation: flyDrone 10s linear infinite;
+}
+
+.drone:nth-child(1) { top: 20%; left: -10%; animation-delay: 0s; }
+.drone:nth-child(2) { top: 60%; left: 110%; animation-delay: 3s; }
+.drone:nth-child(3) { top: 80%; left: -20%; animation-delay: 6s; }
+
+@keyframes flyDrone {
+  0% { transform: translateX(0) translateY(0) rotate(0deg); opacity: 0.8; }
+  50% { transform: translateX(120vw) translateY(-30vh) rotate(180deg); opacity: 1; }
+  100% { transform: translateX(-20vw) translateY(20vh) rotate(360deg); opacity: 0.8; }
+}
