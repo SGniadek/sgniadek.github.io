@@ -1,0 +1,85 @@
+.experience-section {
+  padding: 150px 40px;
+  background: #000;
+  text-align: center;
+  overflow: hidden;
+}
+
+.section-title {
+  font-size: 50px;
+  color: #0af;
+  text-shadow: 0 0 30px #0af, 0 0 60px #0af;
+  margin-bottom: 80px;
+}
+
+/* ENTRY CONTAINER */
+.experience-entry {
+  margin-bottom: 80px;
+  opacity: 0;
+  transform: translateY(-300px) rotateX(80deg);
+  filter: blur(10px);
+}
+
+/* DELAY EACH ENTRY */
+.experience-entry:nth-child(2) { animation-delay: 0.3s, 2.3s; }
+.experience-entry:nth-child(3) { animation-delay: 0.6s, 2.6s; }
+.experience-entry:nth-child(4) { animation-delay: 0.9s, 2.9s; }
+
+.exp-title {
+  font-size: 32px;
+  color: #0af;
+  text-shadow: 0 0 20px #0af;
+  margin-bottom: 10px;
+}
+
+.exp-desc {
+  font-size: 20px;
+  color: #fff;
+  text-shadow: 0 0 10px #0af;
+}
+
+/* COSMIC ENTRY ANIMATION */
+@keyframes cosmicDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-300px) rotateX(80deg) scale(0.6);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(20px) rotateX(0deg) scale(1.05);
+    filter: blur(0);
+  }
+}
+
+/* MATRIX DRIP EFFECT */
+@keyframes matrixDrip {
+  0% {
+    text-shadow: 0 0 20px #0af;
+  }
+  50% {
+    text-shadow: 
+      0 0 20px #0af,
+      0 10px 20px rgba(0,255,255,0.4),
+      0 20px 40px rgba(0,255,255,0.2);
+  }
+  100% {
+    text-shadow: 0 0 20px #0af;
+  }
+}
+
+/* AKTYWNE: animacje startują */
+.experience-section.active .experience-entry {
+  animation: cosmicDrop 2s ease forwards, matrixDrip 3s 2s infinite;
+}
+
+/* DELAY dla kolejnych elementów */
+.experience-section.active .experience-entry:nth-child(2) {
+  animation-delay: 0.3s, 2.3s;
+}
+.experience-section.active .experience-entry:nth-child(3) {
+  animation-delay: 0.6s, 2.6s;
+}
+.experience-section.active .experience-entry:nth-child(4) {
+  animation-delay: 0.9s, 2.9s;
+}
