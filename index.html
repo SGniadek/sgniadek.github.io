@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/skills.css">
     <link rel="stylesheet" href="css/experience.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/footer.css">
+
 </head>
 <body>
     <nav class="nav">
@@ -112,10 +116,79 @@
             </div>
         </section>
 
+        <section id="projects" class="projects-section">
+            <h2 class="section-title">Projekty</h2>
+
+            <div class="project project-left">
+                <div class="project-image">
+                <img src="img/placeholder.png" alt="Projekt 1">
+                <div class="project-overlay">
+                    <h3>Ultimate Tic Tac Toe</h3>
+                    <p>Zaawansowana gra logiczna z inteligentnym AI i futurystycznym UI.</p>
+                </div>
+                </div>
+            </div>
+
+            <div class="project project-right">
+                <div class="project-image">
+                <img src="img/placeholder.png" alt="Projekt 2">
+                <div class="project-overlay">
+                    <h3>Flowchart Creator</h3>
+                    <p>Aplikacja do tworzenia schematów blokowych z drag & drop.</p>
+                </div>
+                </div>
+            </div>
+
+            <div class="project project-left">
+                <div class="project-image">
+                <img src="img/placeholder.png" alt="Projekt 3">
+                <div class="project-overlay">
+                    <h3>Guess The Number 2</h3>
+                    <p>Gra z animacjami, efektami i dynamicznym poziomem trudności.</p>
+                </div>
+                </div>
+            </div>
+
+        </section>
+
     </main>
 
-    <footer></footer>
+    <section id="contact" class="contact-section">
+        <h2 class="section-title">Kontakt</h2>
 
+        <form class="contact-form">
+            <input type="text" placeholder="Twoje imię" required>
+            <input type="email" placeholder="Twój e-mail" required>
+            <textarea placeholder="Twoja wiadomość" required></textarea>
+            <button type="submit">Wyślij wiadomość</button>
+        </form>
+
+        <div class="drone-bg">
+            <div class="drone"></div>
+            <div class="drone"></div>
+            <div class="drone"></div>
+            <div class="drone"></div>
+            <div class="drone"></div>
+            <div class="drone"></div>
+        </div>
+    </section>
+
+
+    <footer class="footer-section">
+        <canvas id="footer-wave"></canvas>
+
+        <div class="footer-content">
+            <h3>Szymson Gniadson</h3>
+            <p>Portfolio 2026 — Kod, pasja i trochę kosmosu 💫</p>
+            <div class="socials">
+            <a href="#">GitHub</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/footer.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
         const section = document.querySelector(".experience-section");
@@ -130,6 +203,22 @@
 
         observer.observe(section);
         });
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+        const section = document.querySelector(".projects-section");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                section.classList.add("active");
+            }
+            });
+        }, { threshold: 0.3 });
+
+        observer.observe(section);
+        });
+        
     </script>
 </body>
 </html>
