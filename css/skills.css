@@ -1,0 +1,73 @@
+.skills-section {
+  padding: 120px 40px;
+  background: #000;
+  text-align: center;
+  overflow: hidden;
+}
+
+.section-title {
+  font-size: 50px;
+  color: #0af;
+  text-shadow: 0 0 25px #0af, 0 0 50px #0af;
+  margin-bottom: 60px;
+}
+
+/* MARQUEE */
+.skills-marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.skills-track {
+  display: flex;
+  gap: 40px;
+  animation: scrollSkills 18s linear infinite;
+}
+
+@keyframes scrollSkills {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* SKILL CARD */
+.skill-card {
+  min-width: 260px;
+  padding: 30px;
+  border-radius: 20px;
+  border: 2px solid #0af;
+  background: rgba(0,0,20,0.6);
+  box-shadow: 0 0 25px #0af, inset 0 0 30px #0af;
+  text-align: center;
+  transition: 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+.skill-card h3 {
+  color: #fff;
+  font-size: 22px;
+  text-shadow: 0 0 10px #0af;
+}
+
+/* HOVER — zatrzymanie animacji + powiększenie + oświetlenie ekranu */
+.skills-track:hover {
+  animation-play-state: paused;
+}
+
+.skill-card:hover {
+  transform: scale(1.6);
+  box-shadow: 0 0 80px #0af, 0 0 150px #0af inset;
+  z-index: 10;
+}
+
+/* FULL SCREEN GLOW ON HOVER */
+.skill-card:hover::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, rgba(0,170,255,0.25), transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
