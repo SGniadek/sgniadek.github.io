@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/skills.css">
     <link rel="stylesheet" href="css/experience.css">
+    <link rel="stylesheet" href="css/projects.css">
 </head>
 <body>
     <nav class="nav">
@@ -112,6 +113,42 @@
             </div>
         </section>
 
+        <section id="projects" class="projects-section">
+            <h2 class="section-title">Projekty</h2>
+
+            <div class="project project-left">
+                <div class="project-image">
+                <img src="img/placeholder.png" alt="Projekt 1">
+                <div class="project-overlay">
+                    <h3>Ultimate Tic Tac Toe</h3>
+                    <p>Zaawansowana gra logiczna z inteligentnym AI i futurystycznym UI.</p>
+                </div>
+                </div>
+            </div>
+
+            <div class="project project-right">
+                <div class="project-image">
+                <img src="img/placeholder.png" alt="Projekt 2">
+                <div class="project-overlay">
+                    <h3>Flowchart Creator</h3>
+                    <p>Aplikacja do tworzenia schematów blokowych z drag & drop.</p>
+                </div>
+                </div>
+            </div>
+
+            <div class="project project-left">
+                <div class="project-image">
+                <img src="img/placeholder.png" alt="Projekt 3">
+                <div class="project-overlay">
+                    <h3>Guess The Number 2</h3>
+                    <p>Gra z animacjami, efektami i dynamicznym poziomem trudności.</p>
+                </div>
+                </div>
+            </div>
+
+        </section>
+
+
     </main>
 
     <footer></footer>
@@ -130,6 +167,22 @@
 
         observer.observe(section);
         });
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+        const section = document.querySelector(".projects-section");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                section.classList.add("active");
+            }
+            });
+        }, { threshold: 0.3 });
+
+        observer.observe(section);
+        });
+        
     </script>
 </body>
 </html>
