@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="css/experience.css">
     <link rel="stylesheet" href="css/projects.css">
     <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/footer.css">
+
 </head>
 <body>
     <nav class="nav">
@@ -172,8 +174,21 @@
     </section>
 
 
-    <footer></footer>
+    <footer class="footer-section">
+        <canvas id="footer-wave"></canvas>
 
+        <div class="footer-content">
+            <h3>Szymson Gniadson</h3>
+            <p>Portfolio 2026 — Kod, pasja i trochę kosmosu 💫</p>
+            <div class="socials">
+            <a href="#">GitHub</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/footer.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
         const section = document.querySelector(".experience-section");
