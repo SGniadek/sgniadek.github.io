@@ -1,0 +1,55 @@
+/* UKRYWAMY DOMYŚLNY KURSOR */
+body {
+  cursor: none;
+}
+
+/* KURSOR STRZAŁKA */
+.custom-cursor {
+  position: fixed;
+  width: 22px;
+  height: 22px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 999999;
+}
+
+/* KSZTAŁT STRZAŁKI */
+.custom-cursor::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 18px solid #0af;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  filter: drop-shadow(0 0 6px #0af) drop-shadow(0 0 12px #0af);
+}
+
+/* ISKRY */
+#cursor-sparks {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999998;
+}
+
+.spark {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #0af;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #0af, 0 0 30px #0af;
+  animation: sparkFly 0.5s ease-out forwards;
+}
+
+@keyframes sparkFly {
+  0% {
+    opacity: 1;
+    transform: translate(0,0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--dx), var(--dy)) scale(0.1);
+  }
+}
