@@ -1,0 +1,81 @@
+/* GLOBAL */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+}
+
+/* NAVBAR */
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid #0af;
+  box-shadow: 0 0 25px #0af;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #0af;
+  text-shadow: 0 0 10px #0af, 0 0 20px #0af;
+}
+
+.logo span {
+  color: #fff;
+  text-shadow: 0 0 10px #fff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #0af;
+  font-size: 18px;
+  font-weight: 600;
+  position: relative;
+  padding: 5px 0;
+  transition: 0.3s;
+  text-shadow: 0 0 8px #0af;
+}
+
+/* LED underline */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: #0af;
+  box-shadow: 0 0 10px #0af;
+  transition: 0.4s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Hover glow */
+.nav-links a:hover {
+  color: #fff;
+  text-shadow: 0 0 15px #0af, 0 0 25px #0af;
+  transform: scale(1.1);
+}
