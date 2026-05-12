@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/skills.css">
+    <link rel="stylesheet" href="css/experience.css">
 </head>
 <body>
     <nav class="nav">
@@ -86,9 +87,49 @@
         </section>
 
 
-        <section></section>
+        <section id="experience" class="experience-section">
+            <h2 class="section-title">Doświadczenie</h2>
+
+            <div class="experience-entry">
+                <h3 class="exp-title">6 lat programowania</h3>
+                <p class="exp-desc">
+                Tworzenie aplikacji webowych, gier, narzędzi developerskich i projektów akademickich.
+                </p>
+            </div>
+
+            <div class="experience-entry">
+                <h3 class="exp-title">Projekty akademickie i własne</h3>
+                <p class="exp-desc">
+                Aplikacja do schematów blokowych, Ultimate Tic Tac Toe, Guess The Number 2.
+                </p>
+            </div>
+
+            <div class="experience-entry">
+                <h3 class="exp-title">Technologie</h3>
+                <p class="exp-desc">
+                JavaScript / TypeScript, HTML5, CSS3, C/C++, Python.
+                </p>
+            </div>
+        </section>
+
     </main>
 
     <footer></footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const section = document.querySelector(".experience-section");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                section.classList.add("active");
+            }
+            });
+        }, { threshold: 0.3 });
+
+        observer.observe(section);
+        });
+    </script>
 </body>
 </html>
